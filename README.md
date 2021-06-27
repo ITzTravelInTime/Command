@@ -1,5 +1,5 @@
 # Command
-Swift Library to launch, run and get the output of executables and terminal commands/scripts in a simple and easy way.
+Swift Library to launch, run and get the output of executables and terminal commands/scripts in a simple and quick way.
 
 # Features description:
 
