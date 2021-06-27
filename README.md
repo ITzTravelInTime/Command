@@ -1,9 +1,17 @@
 # Command
 Swift Library to launch, run and get the output of executables and terminal commands/scripts in a simple and quick way.
 
-# Features description:
+# Features
+- Manages the usage of Swift's `Process` Objects, and so allows the library user to: launch, run or just get the standard output/error of a `Process` execution
+- Provvides comvenint structs for abstraction and ease of usage
+- Allows for class extensions, and extension libraryes to increase the functionality offered (see the `Known extensions for this library` section for more info)
+- Provvides a protocol for extensions to conform to the basic usage of the main class
+- Debug checks to ensure the library code is used as intended
+- No particular dependecies
 
-The features are most well documented into the source code, so check that out for more info. This is done to not have mirrors of this information, this file will just provvide this very usefoul, example usage:
+# Usage
+
+Usage is well documented into the source code, so check that out for more info. To prevent having mirrors of this information, this file will be just limited to the following very usefoul example usage:
 
 ```swift
 
@@ -39,11 +47,15 @@ This code is intended for macOS only since it requires the system library `Proce
  - To let the code to fully work (expecially the `Command.run` and the `Command.get...` functions ) your app/program might most likely need to not be sandboxed, unless an executable located inside the current bundle is specified, see the documentation inside the source code for more details.
  - All functions from the `Command` class needs to be run from a non-main thread, except from the `Command.start` function.
 
+# Known extensions for this library:
+ - [ITzTravelInTime/CommandSudo](https://github.com/ITzTravelInTime/CommandSudo) Adds support for privileged executions using apple scripts.
+
+
 # About the project:
 
-This code was created as part of my TINU project (https://github.com/ITzTravelInTime/TINU) and has been separated and made into it's own library to make the main project's source less complex and more focused on it's aim. 
+This code was created as part of my [TINU project](https://github.com/ITzTravelInTime/TINU) and it has been separated and made into it's own library to make the main project's source less complex and more focused on it's aim. 
 
-Also having it as it's own library allows for code to be updated separately and so various versions of the main TINU app will be able to be compiled all with the latest version of this library.
+Also having this as it's own library allows for code to be updated separately and so various versions of the main TINU app will be able to be compiled all with the latest version of this library.
 
 # Credits:
 
