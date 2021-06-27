@@ -37,7 +37,7 @@ This code is intended for macOS only since it requires the system library `Proce
 # ##Warnings##:
 
  - To let the code to fully work (expecially the `Command.run` and the `Command.get...` functions ) your app/program might most likely need to not be sandboxed, unless an executable located inside the current bundle is specified, see the documentation inside the source code for more details.
- - All functions from the `Command` class needs to be run from a non-main thread, except from the start function.
+ - All functions from the `Command` class needs to be run from a non-main thread, except from the `Command.start` function.
 
 # About the project:
 
