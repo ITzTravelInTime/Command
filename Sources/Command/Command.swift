@@ -103,11 +103,11 @@ public final class Command: CommandExecutor{
         var status = Int32()
         
         //Be carefoul, thanks to this line the whole thread stops, it's not reccommended to use this function from the main thread
-        assert(!Thread.current.isMainThread, """
+        /*assert(!Thread.current.isMainThread, """
             /-------------------------------------------------------\\
             |Running a command from the main thread is unsupported!!|
             \\-------------------------------------------------------/
-        """)
+        """)*/
         
         p.process.waitUntilExit() //we need our process to be completed, so we wait i guess
         
