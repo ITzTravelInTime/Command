@@ -32,7 +32,7 @@ func info() -> String?{
     return out
 }
 
-print(info() ?? "Error: launch of the "uname -a" command failed!")
+print(info() ?? "Error: launch of the \"uname -a\" command failed!")
 
 ```
 
