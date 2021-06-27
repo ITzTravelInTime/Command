@@ -24,21 +24,21 @@ public final class Command: CommandExecutor{
     ///This struct is used to manage the execution of a 'Process' object
     public struct Handle {
         ///The `Process` object to track
-        let process: Process
+        public let process: Process
         ///The `Pipe` object used to track the standard output of `process`
-        let outputPipe: Pipe
+        public let outputPipe: Pipe
         ///The `Pipe` object used to track the standard error of `process`
-        let errorPipe: Pipe
+        public let errorPipe: Pipe
     }
     
     ///This struct is used to represent the outputs of the execution of a  `Process`  object
     public struct Result: Equatable {
         ///The exit code produced by the execution
-        let exitCode: Int32
+        public let exitCode: Int32
         ///The standard ouput lines produced by the execution
-        let output: [String]
+        public let output: [String]
         ///The standard error lines produced by the execution
-        let error: [String]
+        public let error: [String]
     }
     
     /**
