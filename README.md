@@ -47,16 +47,30 @@ This code is intended for macOS only since it requires the system library `Proce
  - To let the code to fully work (expecially the `Command.run` and the `Command.get...` functions ) your app/program might most likely need to not be sandboxed, unless an executable located inside the current bundle is specified, see the documentation inside the source code for more details.
  - All functions from the `Command` class needs to be run from a non-main thread, except from the `Command.start` function.
 
-# Known extensions for this library:
+# Known extensions for this library
  - [ITzTravelInTime/CommandSudo](https://github.com/ITzTravelInTime/CommandSudo) Adds support for privileged executions using apple scripts.
 
 
-# About the project:
+# About the project
 
 This code was created as part of my [TINU project](https://github.com/ITzTravelInTime/TINU) and it has been separated and made into it's own library to make the main project's source less complex and more focused on it's aim. 
 
 Also having this as it's own library allows for code to be updated separately and so various versions of the main TINU app will be able to be compiled all with the latest version of this library.
 
-# Credits:
+# Credits
 
-ITzTravelInTime (Pietro Caruso) - Project creator
+ - ITzTravelInTime (Pietro Caruso) - Project creator and main developer
+
+# Contacts
+
+ - ITzTravelInTime (Pietro Caruso): piecaruso97@gmail.com
+
+# Copyright
+
+Copyright (C) 2021 Pietro Caruso
+
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
