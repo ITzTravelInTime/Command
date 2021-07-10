@@ -65,6 +65,7 @@ public final class Command: CommandExecutor{
             - This function requres sandboxing to be dissbled.
      
      */
+    @available(*, deprecated, message: "This method can lead to dangerous exploits using the shell PATH variable, it's highly reccomended not use it")
     public class func getOut(cmd: String, isErr: Bool) -> String?{
         //ths function runs a command on the sh shell and it does return the output or the error produced
         
@@ -86,6 +87,7 @@ public final class Command: CommandExecutor{
             - This function requres sandboxing to be dissbled.
      
      */
+    @available(*, deprecated, message: "This method can lead to dangerous exploits using the shell PATH variable, it's highly reccomended not use it")
     @inline(__always) public static func getOut(cmd: String) -> String? {
         return getOut(cmd: cmd, isErr: false)
     }
@@ -102,6 +104,7 @@ public final class Command: CommandExecutor{
          - This will suspend the thread it's running on, avoid running this from the main thread or the app/program will stop responding!
          - This function requres sandboxing to be dissbled.
     */
+    @available(*, deprecated, message: "This method can lead to dangerous exploits using the shell PATH variable, it's highly reccomended not use it")
     @inline(__always) public class func getErr(cmd: String) -> String?{
         //ths function runs a command on the sh shell and it does return the error output
         return getOut(cmd: cmd, isErr: true)
