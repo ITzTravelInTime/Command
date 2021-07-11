@@ -43,6 +43,7 @@ public extension CommandExecutor{
             ret = Self.start(cmd: "/bin/sh", args: ["-c", cmd])?.result()
         }
         
+        print("[Command] [Debug] Executed command: \(cmd) \(args?.stringLine())")
         print("[Command] [Debug] Exit code: \(ret.exitCode)")
         print("[Command] [Debug] Output:\n\(ret.outputString())")
         print("[Command] [Debug] Error:\n\(ret.errorString())")

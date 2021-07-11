@@ -23,4 +23,17 @@ public extension Array where Element == String{
         return ret
     }
     
+    func stringLine() -> String{
+        var ret = ""
+        for r in self{
+            ret += r + " "
+        }
+        
+        if !ret.isEmpty{
+            ret.removeLast()
+        }
+        
+        return ret
+    }
+    
 }
