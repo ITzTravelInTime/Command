@@ -16,37 +16,38 @@ public final class Command: CommandExecutor{
         - Returns: If the `Process` object launched successfully an `Handle` object is returned to track it, otherwise nil is returned.
      
         - Precondition:
-            - The parameter `cmd` must not be empty.
+            - The parameter `cmd` must not be empty and must be a file that exists or an assertion error will be triggered.
             - Unless an executable embedded inside the current bundle is used, executing this function will most likely need sandboxing to be disabled.
      
      */
     public class func start(cmd: String, args: [String]! = nil) -> Handle? {
         
         assert(!cmd.isEmpty, "The process needs a path to an executable to execute!")
+        assert(FileManager.default.fileExists(atPath: cmd), "A valid path to an executable file that exist must be specified for this arg")
         
         //our temporary Process trackers
-        //let task = Process()
-        //let outpipe = Pipe()
-        //let errpipe = Pipe()
+        //let process = Process()
+        //let outputPipe = Pipe()
+        //let errorPipe = Pipe()
         
         let handle = Handle()
         
         handle.process.launchPath = cmd //Sets the executable path
-        handle.process.arguments = args ?? [] //Sets the executable arguments
+        handle.process.arguments = args //Sets the executable arguments
         
         //create the standard error and output connections
         handle.process.standardOutput = handle.outputPipe
-        handle.process.standardError = handle.outputPipe
+        handle.process.standardError = handle.errorPipe
         
         //launches the Process
         handle.process.launch()
         
-        //Perhaps a better check should be used, but for now this works will enought
+        //Perhaps a better check should be used, but for now this works well enought
         if !handle.process.isRunning{
             return nil
         }
         
-        //return Handle(process: task, outputPipe: outpipe, errorPipe: errpipe)
+        //return Handle(process: process, outputPipe: outputPipe, errorPipe: errorPipe)
         
         return handle
     }
