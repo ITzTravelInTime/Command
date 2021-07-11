@@ -31,14 +31,23 @@ public extension CommandExecutor{
             - This function requres sandboxing to be dissbled unless it's run by passing the path for an executable embedded into the current bundle into the `cmd` argument and the `args` argument is not nil
      */
     static func run(cmd : String, args : [String]? = nil) -> Command.Result? {
-        //Can't do T.run because that's recursive with the current implementation
+        
+        var ret: Command.Result!
+        
         if let cargs = args{
-            return Self.start(cmd: cmd, args: cargs)?.result()
+             ret = Self.start(cmd: cmd, args: cargs)?.result()
+        }else{
+            assert(!cmd.isEmpty, "The process needs a path to an executable to execute!")
+            //assert(FileManager.default.fileExists(atPath: cmd), "A valid path to an executable file that exist must be specified for this arg")
+            //assert(!Sandbox.isEnabled, "The app sandbox should be disabled to perform this operation!!")
+            ret = Self.start(cmd: "/bin/sh", args: ["-c", cmd])?.result()
         }
         
-        assert(!cmd.isEmpty, "The process needs a path to an executable to execute!")
-        //assert(!Sandbox.isEnabled, "The app sandbox should be disabled to perform this operation!!")
-        return Self.start(cmd: "/bin/sh", args: ["-c", cmd])?.result()
+        print("[Command] [Debug] Exit code: \(ret.exitCode)")
+        print("[Command] [Debug] Output:\n\(ret.outputString())")
+        print("[Command] [Debug] Error:\n\(ret.errorString())")
+        
+        return ret
     }
 }
 
