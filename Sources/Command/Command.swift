@@ -6,6 +6,8 @@ import Foundation
 ///This class manages the usage of executables and terminal commands using `Process` objects.
 public final class Command: CommandExecutor{
     
+    public typealias Printer = DebugPrinter
+    
     /**
      This function stars a `Process` object.
      

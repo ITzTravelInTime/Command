@@ -24,12 +24,12 @@ open class GeneralPrinter {
 }
 
 ///Subclass of the printer class adding the custom prefix
-public class Printer: GeneralPrinter{
+public class DebugPrinter: GeneralPrinter{
     public override class var prefix: String{
         return "[Command] [Debug]"
     }
 }
 
 internal func print( _ stuff: Any){
-    Printer.print("\(stuff)")
+    DebugPrinter.print("\(stuff)")
 }

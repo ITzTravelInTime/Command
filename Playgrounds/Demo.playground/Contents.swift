@@ -2,7 +2,7 @@ import Foundation
 import Command
 
 //Disable debug printing for the library
-Printer.enabled = false
+Command.Printer.enabled = false
 
 func info() -> String?{
     
