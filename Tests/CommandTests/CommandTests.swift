@@ -12,8 +12,10 @@
             var out: String?
                 
             DispatchQueue.global(qos: .background).sync {
-                out = Command.getOut(cmd: "uname -a")
+                //out = Command.getOut(cmd: "uname -a")
             
+                out = Command.run(cmd: "/usr/bin/uname", args: ["-a"])?.outputString()
+                
                 print(out ?? "[Error]")
             }
             
