@@ -22,7 +22,7 @@ import Command
 #warning("This code needs the app sandbox to be tuned off for the current project! (unless you decide to execute an embedded executable inside your app's bundle)")
 
 //Disable debug printing for the library
-Printer.enabled = false
+Command.Printer.enabled = false
 
 func info() -> String?{
     
