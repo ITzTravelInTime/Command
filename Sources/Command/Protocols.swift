@@ -44,10 +44,15 @@ public extension CommandExecutor{
         }
         
         print("Executed command: \(cmd) \(args?.stringLine() ?? "")")
-        print("Exit code: \(ret.exitCode)")
-        print("Output:\n\(ret.outputString())")
-        print("Error:\n\(ret.errorString())")
         
+        if ret != nil{
+            print("Exit code: \(ret.exitCode)")
+            print("Output:\n\(ret.outputString())")
+            print("Error:\n\(ret.errorString())")
+        }else{
+            print("Command returned nil")
+        }
+            
         return ret
     }
 }
