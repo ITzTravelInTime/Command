@@ -1,7 +1,7 @@
 # Command
 Swift Library to launch, run and get the output of executables and terminal commands/scripts in a simple and quick way.
 
-# Features
+## Features
 - Manages the usage of Swift's `Process` Objects, and so allows the library user to: launch, run or just get the standard output/error of a `Process` execution
 - Provvides comvenint structs for abstraction and ease of usage
 - Allows for class extensions, and extension libraryes to increase the functionality offered (see the `Known extensions for this library` section for more info)
@@ -9,7 +9,7 @@ Swift Library to launch, run and get the output of executables and terminal comm
 - Debug checks to ensure the library code is used as intended
 - No particular dependecies
 
-# Usage
+## Usage
 
 Usage is well documented into the source code, so check that out for more info. To prevent having mirrors of this information, this file will be just limited to the following very usefoul example usage:
 
@@ -40,38 +40,43 @@ print(info() ?? "Error: launch of the \"uname -a\" command failed!")
 
 ```
 
-# What apps/programs is this Library intended for?
+## What apps/programs is this Library intended for?
 
 This library should be used by non-sandboxed swift apps/programs (unless only commands targeted at embedded executables inside the current bundle are run) or embedded helper tools, that needs to run terminal scripts/commands or separated executables from their own.
 
 This code is intended for macOS only since it requires the system library `Process` type from the Swift API, that is only available on that platform.
 
-# **Warnings**
+## **Warnings**
 
  - To let the code to fully work (expecially the `Command.run` and the `Command.get...` functions ) your app/program might most likely need to not be sandboxed, unless an executable located inside the current bundle is specified, see the documentation inside the source code for more details.
  - All functions from the `Command` class needs to be run from a non-main thread, except from the `Command.start` function.
 
-# Known extensions for this library
+## Known extensions for this library
 
  - [ITzTravelInTime/CommandSudo](https://github.com/ITzTravelInTime/CommandSudo) Adds support for privileged executions using apple scripts.
 
-# About the project
+## About the project
 
 This code was created as part of my [TINU project](https://github.com/ITzTravelInTime/TINU) and it has been separated and made into it's own library to make the main project's source less complex and more focused on it's aim. 
 
 Also having this as it's own library allows for code to be updated separately and so various versions of the main TINU app will be able to be compiled all with the latest version of this library.
 
-# Credits
+## Used libraries
+
+- [ITzTravelInTime/SwiftPackagesBase](https://github.com/ITzTravelInTime/SwiftPackagesBase)
+
+## Credits
 
  - ITzTravelInTime (Pietro Caruso) - Project creator and main developer
 
-# Contacts
+## Contacts
 
  - ITzTravelInTime (Pietro Caruso): piecaruso97@gmail.com
 
-# Copyright
+## Legal info
 
-Copyright (C) 2021 Pietro Caruso
+Swift Library to launch, run and get the output of executables and terminal commands/scripts in a simple and quick way.
+Copyright (C) 2021-2022 Pietro Caruso
 
 This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
 
